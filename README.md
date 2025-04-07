@@ -106,44 +106,6 @@ CupertinoDatePickerContainer(
 ),
 ```
 
-## Components
-
-### TimeDisplayButton
-
-A button that displays the currently selected date and/or time based on the chosen mode.
-
-#### Properties
-
-| Property          | Type                     | Description                               |
-| ----------------- | ------------------------ | ----------------------------------------- |
-| `onTap`           | `Function()`             | Callback when the button is tapped        |
-| `initialDateTime` | `DateTime`               | The date/time to display                  |
-| `isExpanded`      | `bool`                   | Whether the associated picker is expanded |
-| `elevation`       | `double?`                | Material elevation of the button          |
-| `borderRadius`    | `double?`                | Border radius of the button               |
-| `foregroundColor` | `Color?`                 | Color for text and icons                  |
-| `backgroundColor` | `Color?`                 | Background color of the button            |
-| `height`          | `double?`                | Height of the button                      |
-| `width`           | `double?`                | Width of the button                       |
-| `mode`            | `TimeDisplayButtonMode?` | Display mode for the date/time            |
-
-### DatePickerContainer
-
-A container that wraps the CupertinoDatePicker with animations.
-
-#### Properties
-
-| Property            | Type                       | Description                                   |
-| ------------------- | -------------------------- | --------------------------------------------- |
-| `onDateTimeChanged` | `Function(DateTime)`       | Callback when date/time changes               |
-| `initialDateTime`   | `DateTime`                 | Initial date/time value                       |
-| `isExpanded`        | `bool?`                    | Whether the picker is visible                 |
-| `height`            | `double?`                  | Height of the picker when expanded            |
-| `width`             | `double?`                  | Width of the picker                           |
-| `use24hFormat`      | `bool?`                    | Whether to use 24-hour format (default: true) |
-| `minuteInterval`    | `int?`                     | Interval between minutes (default: 5)         |
-| `mode`              | `CupertinoDatePickerMode?` | Picker mode (date, time, or both)             |
-
 ## Example
 
 See the `/sample` directory for a complete working example of how to use this package.
