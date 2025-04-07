@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            DateDisplayButton(
+            DatePickerButton(
               onTap: () => setState(() => _isPickerVisible = !_isPickerVisible),
               displayDateTime: _selectedDateTime,
               isExpanded: _isPickerVisible,

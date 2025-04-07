@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 
 enum DateDisplayMode { date, dateAndTime, monthYear, time }
 
-class DateDisplayButton extends StatefulWidget {
+class DatePickerButton extends StatefulWidget {
   final void Function() onTap;
   final DateTime displayDateTime;
   final bool isExpanded;
@@ -20,7 +20,7 @@ class DateDisplayButton extends StatefulWidget {
   final double? width;
   final DateDisplayMode? mode;
 
-  const DateDisplayButton({
+  const DatePickerButton({
     super.key,
     required this.onTap,
     required this.displayDateTime,
@@ -38,10 +38,10 @@ class DateDisplayButton extends StatefulWidget {
   });
 
   @override
-  State<DateDisplayButton> createState() => _DateDisplayButtonState();
+  State<DatePickerButton> createState() => _DatePickerButtonState();
 }
 
-class _DateDisplayButtonState extends State<DateDisplayButton>
+class _DatePickerButtonState extends State<DatePickerButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _rotationAnimation;
@@ -59,7 +59,7 @@ class _DateDisplayButtonState extends State<DateDisplayButton>
   }
 
   @override
-  void didUpdateWidget(DateDisplayButton oldWidget) {
+  void didUpdateWidget(DatePickerButton oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.isExpanded != oldWidget.isExpanded) {
       if (widget.isExpanded) {
@@ -139,7 +139,7 @@ class _DateDisplayButtonState extends State<DateDisplayButton>
                         size: 22.0,
                         color: widget.foregroundColor,
                       )
-                      : SizedBox(),
+                      : const SizedBox(),
                   SizedBox(width: widget.isIconEnable ? 8.0 : 0.0),
                   Text(
                     _formatDateTime(),
@@ -164,7 +164,7 @@ class _DateDisplayButtonState extends State<DateDisplayButton>
                           );
                         },
                       )
-                      : SizedBox(),
+                      : const SizedBox(),
                 ],
               ),
             ),
