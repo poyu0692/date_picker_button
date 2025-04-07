@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:time_picker_button/src/components/date_display_button.dart';
-import 'package:time_picker_button/src/components/date_picker_container.dart';
+import 'package:date_picker_button/date_picker_button.dart';
 
 void main() {
   runApp(const MaterialApp(home: TestPage()));
@@ -43,7 +42,7 @@ class _TestPageState extends State<TestPage> {
                             setState(() => isExpandedMonth = !isExpandedMonth),
                     displayDateTime: time,
                     isExpanded: isExpandedMonth,
-                    mode: DateDisplayButtonMode.date,
+                    mode: DateDisplayMode.date,
                   ),
                   // 時間のPicker
                   DateDisplayButton(

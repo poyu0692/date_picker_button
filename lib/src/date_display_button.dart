@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-enum DateDisplayButtonMode { date, dateAndTime, monthYear, time }
+enum DateDisplayMode { date, dateAndTime, monthYear, time }
 
 class DateDisplayButton extends StatefulWidget {
   final void Function() onTap;
@@ -18,7 +18,7 @@ class DateDisplayButton extends StatefulWidget {
   final Color? backgroundColor;
   final double? height;
   final double? width;
-  final DateDisplayButtonMode? mode;
+  final DateDisplayMode? mode;
 
   const DateDisplayButton({
     super.key,
@@ -77,35 +77,35 @@ class _DateDisplayButtonState extends State<DateDisplayButton>
   }
 
   String _formatDateTime() {
-    final mode = widget.mode ?? DateDisplayButtonMode.time;
+    final mode = widget.mode ?? DateDisplayMode.time;
 
     switch (mode) {
-      case DateDisplayButtonMode.date:
+      case DateDisplayMode.date:
         return DateFormat('yyyy/MM/dd').format(widget.displayDateTime);
-      case DateDisplayButtonMode.dateAndTime:
+      case DateDisplayMode.dateAndTime:
         return DateFormat('yyyy/MM/dd HH:mm').format(widget.displayDateTime);
-      case DateDisplayButtonMode.monthYear:
+      case DateDisplayMode.monthYear:
         return DateFormat('yyyy/MM').format(widget.displayDateTime);
-      case DateDisplayButtonMode.time:
+      case DateDisplayMode.time:
         return DateFormat('HH:mm').format(widget.displayDateTime);
     }
   }
 
   IconData _getIcon() {
-    final mode = widget.mode ?? DateDisplayButtonMode.time;
+    final mode = widget.mode ?? DateDisplayMode.time;
 
     if (widget.icon != null) {
       return widget.icon!;
     }
 
     switch (mode) {
-      case DateDisplayButtonMode.date:
+      case DateDisplayMode.date:
         return Icons.calendar_today;
-      case DateDisplayButtonMode.dateAndTime:
+      case DateDisplayMode.dateAndTime:
         return Icons.event;
-      case DateDisplayButtonMode.monthYear:
+      case DateDisplayMode.monthYear:
         return Icons.calendar_month;
-      case DateDisplayButtonMode.time:
+      case DateDisplayMode.time:
         return Icons.access_time_rounded;
     }
   }

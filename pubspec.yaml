@@ -1,6 +1,7 @@
-name: time_picker_button
-description: "A new Flutter package project."
+name: date_picker_button
+description: "A Well designed datetime picker for Flutter."
 version: 0.0.1
+
 
 environment:
   sdk: ^3.7.0

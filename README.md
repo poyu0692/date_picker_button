@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
           children: [
             TimeDisplayButton(
               onTap: () => setState(() => _isPickerVisible = !_isPickerVisible),
-              initialDateTime: _selectedDateTime,
+              displayDateTime: _selectedDateTime,
               isExpanded: _isPickerVisible,
               mode: TimeDisplayButtonMode.dateAndTime,
             ),
@@ -81,10 +81,10 @@ class _MyAppState extends State<MyApp> {
 The package supports various display modes through the `TimeDisplayButtonMode` enum:
 
 ```dart
-enum TimeDisplayButtonMode {
+enum DateDisplayMode {
   date,          // Shows only date (YYYY/MM/DD)
   dateAndTime,   // Shows both date and time (YYYY/MM/DD HH:MM)
-  monthYear,     // Shows only month and year (YYYY年MM月)
+  monthYear,     // Shows only month and year (YYYY/MM)
   time,          // Shows only time (HH:MM)
 }
 ```
@@ -142,7 +142,7 @@ A button that displays the currently selected date and/or time based on the chos
 | `width`           | `double?`                | Width of the button                       |
 | `mode`            | `TimeDisplayButtonMode?` | Display mode for the date/time            |
 
-### CupertinoDatePickerContainer
+### DatePickerContainer
 
 A container that wraps the CupertinoDatePicker with animations.
 
@@ -173,13 +173,3 @@ See the `/example` directory for a complete working example of how to use this p
 ## License
 
 This package is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/amazing-feature`)
-3. Commit your Changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the Branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
