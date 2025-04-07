@@ -4,21 +4,6 @@ A customizable date and time picker widget for Flutter applications with smooth 
 
 ![Flutter Date Time Picker](https://example.com/path-to-your-image.png)
 
-## Features
-
-- 📅 Multiple display modes (date, time, date and time, month/year)
-- 🔄 Smooth animations for picker expansion and collapse
-- 🎨 Fully customizable appearance
-- 📱 Uses native CupertinoDatePicker for a platform-consistent experience
-- ⌚ 24-hour format support
-- 🔍 Minute interval customization
-
-## Platform Support
-
-| Android | iOS | Web | macOS | Windows | Linux |
-| ------- | --- | --- | ----- | ------- | ----- |
-| ✅      | ✅  | ✅  | ✅    | ✅      | ✅    |
-
 ## Installation
 
 Add the dependency to your `pubspec.yaml`:
@@ -27,7 +12,7 @@ Add the dependency to your `pubspec.yaml`:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.18.1 # For date formatting
+  date_picker_button: ^0.0.1
 ```
 
 ## Usage
@@ -55,13 +40,13 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TimeDisplayButton(
+            DateDisplayButton(
               onTap: () => setState(() => _isPickerVisible = !_isPickerVisible),
               displayDateTime: _selectedDateTime,
               isExpanded: _isPickerVisible,
-              mode: TimeDisplayButtonMode.dateAndTime,
+              mode: TimeDisplayMode.dateAndTime,
             ),
-            CupertinoDatePickerContainer(
+            DatePickerContainer(
               onDateTimeChanged: (DateTime newDateTime) {
                 setState(() => _selectedDateTime = newDateTime);
               },
@@ -78,7 +63,7 @@ class _MyAppState extends State<MyApp> {
 
 ### Available Display Modes
 
-The package supports various display modes through the `TimeDisplayButtonMode` enum:
+The package supports various display modes through the `DateDisplayMode` enum:
 
 ```dart
 enum DateDisplayMode {
@@ -161,14 +146,14 @@ A container that wraps the CupertinoDatePicker with animations.
 
 ## Example
 
-See the `/example` directory for a complete working example of how to use this package.
+See the `/sample` directory for a complete working example of how to use this package.
 
 ## Additional Information
 
 ### Dependencies
 
 - Flutter SDK
-- intl: For date/time formatting
+- intl
 
 ## License
 
